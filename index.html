@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eosinocyte Juara</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="icon" href="ico/unmul.png">
+</head>
+<body>
+  <nav>
+    <a href="#" class="logo">Eosinocyte</a>
+    <ul>
+      <li><a href="#" class="active">Home</a></li>
+      <li><a href="#">Eosfriend</a></li>
+      <li><a href="#">Karya</a></li>
+      <li><a href="https://www.instagram.com/eosinocyte.21/" target="_blank">Instagram</a></li>
+    </ul>
+  </nav>
+  <section>
+    <img src="images/stars.png" alt="stars" class="stars">
+    <img src="images/moon.png" alt="moon" class="moon">
+    <img src="images/mountains_behind.png" alt="mountains_behind" class="mountains_behind">
+    <h2 class="text">Eosinocyte'21</h2>
+    <a href="#article" class="btn">Explore</a>
+    <img src="images/mountains_front.png" alt="mountains_front" class="mountains_front">
+  </section>
+  <article id="article">
+    <h2 data-aos="fade-down">Eosinocyte | FK UNMUL 2021</h2>
+    <div class="content">
+      <p data-aos="fade-right"> Eosinocyte (iusinosait, komponen sel darah putih/ Enthusias, obliging, sincere Innovative in the cycle of twenty one) alasan eosinocyte, salah satu komponen sel darah putih bergranula yg berperan melawan patogen bersama dengan neutrofil, basofil, limbfosit, monosit, sehingga dapat diibaratkan sebagai perjuangan rekan-rekan FKUnmul yg saling membahu satu sama lain dalam menempuh berbagai rintangan kuliah selama kurang lebih 7 tahun yg akan mendatang. Penyebaran eosinosit yg merata pada jaringan, sejalan dengan usaha pemerintah dalam mengatasi kekurang tenaga medis di benerapa wilayah terutama perbatasan&pelosok. Oleh karena itu, lulusan FK Unmul diharapkan dapat memenuhi tugas itu.<br><br></p>
+    </div>
+    
+  </article>
+  <script>
+    const stars = document.getElementsByClassName("stars")[0];
+    const moon = document.getElementsByClassName("moon")[0];
+    const mountains_behind = document.getElementsByClassName("mountains_behind")[0];
+    const text = document.getElementsByClassName("text")[0];
+    const btn = document.getElementsByClassName("btn")[0];
+    const mountains_front = document.getElementsByClassName("mountains_front")[0];
+    const nav = document.getElementsByTagName("nav")[0];
+
+    window.addEventListener("scroll", function() {
+      let value = window.scrollY;
+      stars.style.left = value * 0.25 + 'px';
+      moon.style.top = value * 1.05 + 'px';
+      mountains_behind.style.top = value * 0.5 + 'px';
+      mountains_front.style.top = value * 0 + 'px';
+      text.style.marginRight = value * 4 + 'px';
+      text.style.marginTop = value * 1.5 + 'px';
+      btn.style.marginTop = value * 1.5 + 'px';
+      nav.style.top = value * 0.5 + 'px';
+    });
+  </script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+    AOS.init({
+    // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+    duration: 1200, // values from 0 to 3000, with step 50ms
+    easing: 'ease', // default easing for AOS animations
+    once: false, // whether animation should happen only once - while scrolling down
+  });
+  </script>
+</body>
+</html>

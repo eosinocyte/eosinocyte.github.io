@@ -21,6 +21,13 @@
       <li><a href="https://www.instagram.com/eosinocyte.21/" target="_blank">Instagram</a></li>
       <li><a href="https://eosinocyte.github.io/welcome/">Login</a></li>
     </ul>
+
+    <div class="menu-toggle">
+      <input type="checkbox" />
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
   </nav>
   <section>
     <img src="images/stars.png" alt="stars" class="stars">
@@ -38,25 +45,36 @@
     
   </article>
   <script>
-    const stars = document.getElementsByClassName("stars")[0];
-    const moon = document.getElementsByClassName("moon")[0];
-    const mountains_behind = document.getElementsByClassName("mountains_behind")[0];
-    const text = document.getElementsByClassName("text")[0];
-    const btn = document.getElementsByClassName("btn")[0];
-    const mountains_front = document.getElementsByClassName("mountains_front")[0];
-    const nav = document.getElementsByTagName("nav")[0];
+    if (screen.width <= 760) {
+      const menuToggle = document.querySelector('.menu-toggle input');
+      const nav = document.querySelector('nav ul');
 
-    window.addEventListener("scroll", function() {
-      let value = window.scrollY;
-      stars.style.left = value * 0.25 + 'px';
-      moon.style.top = value * 1.05 + 'px';
-      mountains_behind.style.top = value * 0.5 + 'px';
-      mountains_front.style.top = value * 0 + 'px';
-      text.style.marginRight = value * 4 + 'px';
-      text.style.marginTop = value * 1.5 + 'px';
-      btn.style.marginTop = value * 1.5 + 'px';
-      nav.style.top = value * 0.5 + 'px';
+      menuToggle.addEventListener('click', function(){
+          nav.classList.toggle('slide');
+          console.info(screen.width);
     });
+    } else {
+      const stars = document.getElementsByClassName("stars")[0];
+      const moon = document.getElementsByClassName("moon")[0];
+      const mountains_behind = document.getElementsByClassName("mountains_behind")[0];
+      const text = document.getElementsByClassName("text")[0];
+      const btn = document.getElementsByClassName("btn")[0];
+      const mountains_front = document.getElementsByClassName("mountains_front")[0];
+      const nav = document.getElementsByTagName("nav")[0];
+
+      window.addEventListener("scroll", function() {
+        let value = window.scrollY;
+        stars.style.left = value * 0.25 + 'px';
+        moon.style.top = value * 1.05 + 'px';
+        mountains_behind.style.top = value * 0.5 + 'px';
+        mountains_front.style.top = value * 0 + 'px';
+        text.style.marginRight = value * 4 + 'px';
+        text.style.marginTop = value * 1.5 + 'px';
+        btn.style.marginTop = value * 1.5 + 'px';
+        nav.style.top = value * 0.5 + 'px';
+      });
+    }
+    
   </script>
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
@@ -68,5 +86,6 @@
     once: false, // whether animation should happen only once - while scrolling down
   });
   </script>
+
 </body>
 </html>
